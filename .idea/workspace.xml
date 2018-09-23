@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b04763ee-c5ef-4750-ba61-6ef6a7b69f37" name="Default" comment="" />
+    <list default="true" id="b04763ee-c5ef-4750-ba61-6ef6a7b69f37" name="Default" comment="Idea files changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="java-messenger.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -66,12 +68,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="2244" />
+          <entry key="txt" value="18" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2244" />
+          <entry key="PLAIN_TEXT" value="18" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -373,7 +377,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537741515297" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537741670252" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sqlite-jdbc-example" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -578,15 +582,24 @@
       <workItem from="1512593536957" duration="11000" />
       <workItem from="1513184443783" duration="8228000" />
       <workItem from="1537469069663" duration="14818000" />
-      <workItem from="1537549525896" duration="16761000" />
+      <workItem from="1537549525896" duration="17013000" />
     </task>
+    <task id="LOCAL-00001" summary="Idea files changes">
+      <created>1537741653782</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537741653782</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40711000" />
+    <option name="totallyTimeSpent" value="40963000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="427" y="49" width="1425" height="978" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24468865" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -598,14 +611,14 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996337" visible="true" weight="0.2994083" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4996337" weight="0.2994083" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Statistic" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50036633" side_tool="true" visible="true" weight="0.2994083" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50036633" side_tool="true" weight="0.2994083" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32662722" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -638,6 +651,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/java-messenger" />
     </ignored-roots>
+    <MESSAGE value="Idea files changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Idea files changes" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
