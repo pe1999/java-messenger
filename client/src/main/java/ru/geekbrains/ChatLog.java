@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class ChatLog {
     private BufferedReader chatLogReader;
-    private FileWriter chatLogWriter;
+    //private FileWriter chatLogWriter;
     private ArrayList<String> chatlog;
     private String chatFileName;
 
@@ -35,10 +35,8 @@ public class ChatLog {
     }
 
     public boolean writeString(String str) {
-        try {
-            chatLogWriter = new FileWriter(chatFileName, true);
+        try(FileWriter chatLogWriter = new FileWriter(chatFileName, true)) {
             chatLogWriter.write(str);
-            chatLogWriter.close();
         } catch (IOException e) {
             //e.printStackTrace();
             return false;
