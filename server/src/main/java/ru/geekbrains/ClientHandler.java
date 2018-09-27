@@ -30,61 +30,64 @@ public class ClientHandler {
     }
 
     public void startWorkerThread() {
-        new Thread(() -> {
-            try {
-                while (true) {
-                    String msg = in.readUTF();
-                    if (msg.startsWith("/auth ")) {
-                        // /auth login1 pass1
-                        String[] tokens = msg.split(" ");
-                        this.login = tokens[1];
-                        String nick = server.getAuthHandler().getNickByLoginPass(tokens[1], tokens[2]);
-                        if (nick != null) {
-                            if (server.isNickBusy(nick)) {
-                                out.writeUTF("Учетная запись уже используется");
-                                continue;
-                            }
-                            out.writeUTF("/authok " + nick);
-                            this.nick = nick;
-                            server.subscribe(this);
-                            break;
-                        } else {
-                            out.writeUTF("Неверный логин/пароль");
-                        }
-                    }
-                }
-                while (true) {
-                    String msg = in.readUTF();
-                    if (msg.startsWith("/")) {
-                        if (msg.startsWith("/w ")) {
-                            // /w nick2 hello hello
-                            String[] tokens = msg.split(" ", 3);
-                            server.sendPrivateMsg(this, tokens[1], tokens[2]);
-                        }
-                        if(msg.startsWith("/changenick ")) {
-                            // * HomeWork here
+        server.getServerExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    while (true) {
+                        String msg = in.readUTF();
+                        if (msg.startsWith("/auth ")) {
+                            // /auth login1 pass1
                             String[] tokens = msg.split(" ");
-                            if(tokens.length == 2) {
-                                if(server.getAuthHandler().changeNick(this.login, tokens[1])) {
-                                    server.broadcastMsg(this, "Пользователь " + this.nick + " сменил ник на " + tokens[1] + ".");
-                                    this.nick = tokens[1];
-                                    server.broadcastClientsList();
-                                } else sendMessage("Ник уже используется.");
+                            ClientHandler.this.login = tokens[1];
+                            String nick = server.getAuthHandler().getNickByLoginPass(tokens[1], tokens[2]);
+                            if (nick != null) {
+                                if (server.isNickBusy(nick)) {
+                                    out.writeUTF("Учетная запись уже используется");
+                                    continue;
+                                }
+                                out.writeUTF("/authok " + nick);
+                                ClientHandler.this.nick = nick;
+                                server.subscribe(ClientHandler.this);
+                                break;
                             } else {
-                                sendMessage("Неправильный формат команды /changenick.");
+                                out.writeUTF("Неверный логин/пароль");
                             }
                         }
-                    } else {
-                        server.broadcastMsg(this, msg);
                     }
-                    System.out.println(msg);
+                    while (true) {
+                        String msg = in.readUTF();
+                        if (msg.startsWith("/")) {
+                            if (msg.startsWith("/w ")) {
+                                // /w nick2 hello hello
+                                String[] tokens = msg.split(" ", 3);
+                                server.sendPrivateMsg(ClientHandler.this, tokens[1], tokens[2]);
+                            }
+                            if (msg.startsWith("/changenick ")) {
+                                // * HomeWork here
+                                String[] tokens = msg.split(" ");
+                                if (tokens.length == 2) {
+                                    if (server.getAuthHandler().changeNick(ClientHandler.this.login, tokens[1])) {
+                                        server.broadcastMsg(ClientHandler.this, "Пользователь " + ClientHandler.this.nick + " сменил ник на " + tokens[1] + ".");
+                                        ClientHandler.this.nick = tokens[1];
+                                        server.broadcastClientsList();
+                                    } else ClientHandler.this.sendMessage("Ник уже используется.");
+                                } else {
+                                    ClientHandler.this.sendMessage("Неправильный формат команды /changenick.");
+                                }
+                            }
+                        } else {
+                            server.broadcastMsg(ClientHandler.this, msg);
+                        }
+                        System.out.println(msg);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    ClientHandler.this.closeConnection();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                closeConnection();
             }
-        }).start();
+        });
     }
 
     public void sendMessage(String msg) {

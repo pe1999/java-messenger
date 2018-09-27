@@ -4,17 +4,26 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Vector;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server {
     private ServerSocket serverSocket;
     private AuthHandler authHandler;
     private Vector<ClientHandler> clients;
 
+    private ExecutorService serverExecutor;
+
     public AuthHandler getAuthHandler() {
         return authHandler;
     }
 
+    public ExecutorService getServerExecutor() {
+        return serverExecutor;
+    }
+
     public Server() {
+        serverExecutor = Executors.newCachedThreadPool();
         try {
             authHandler = new DBAuthHandler(); //SimpleAuthHandler();
             authHandler.start();
@@ -34,6 +43,7 @@ public class Server {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            serverExecutor.shutdown();
             authHandler.stop();
         }
     }

@@ -65,12 +65,6 @@ public class Controller implements Initializable {
         clientsList = FXCollections.observableArrayList();
         clientsView.setItems(clientsList);
         network = new Network();
-        // Создание лога и заполнение окна чата здесь.
-        chatLog = new ChatLog(CHAT_FILE_NAME, CHAT_LOG_SIZE);
-        String[] strs = chatLog.getStrings();
-        for (String str : strs) {
-            mainTextArea.appendText(str + "\n");
-        }
     }
 
     public void sendMsg() {
@@ -91,6 +85,12 @@ public class Controller implements Initializable {
                     argsAuthOk -> {
                         nick = (String) argsAuthOk[0];
                         Controller.this.setAuthorized(true);
+                        // Создание лога и заполнение окна чата здесь.
+                        chatLog = new ChatLog(nick + ".txt"/*CHAT_FILE_NAME*/, CHAT_LOG_SIZE);
+                        String[] strs = chatLog.getStrings();
+                        for (String str : strs) {
+                            mainTextArea.appendText(str + "\n");
+                        }
                     },
                     argsGetClientsList -> Platform.runLater(() -> {
                         clientsList.clear();
