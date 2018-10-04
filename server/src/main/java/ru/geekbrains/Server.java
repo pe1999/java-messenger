@@ -6,6 +6,8 @@ import java.net.Socket;
 import java.util.Vector;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Server {
     private ServerSocket serverSocket;
@@ -13,6 +15,8 @@ public class Server {
     private Vector<ClientHandler> clients;
 
     private ExecutorService serverExecutor;
+
+    private final Logger logger = Logger.getLogger(this.getClass().getName());
 
     public AuthHandler getAuthHandler() {
         return authHandler;
@@ -22,17 +26,22 @@ public class Server {
         return serverExecutor;
     }
 
+    public Logger getLogger() {
+        return logger;
+    }
+
     public Server() {
         serverExecutor = Executors.newCachedThreadPool();
+        logger.setLevel(Level.ALL);
         try {
             authHandler = new DBAuthHandler(); //SimpleAuthHandler();
             authHandler.start();
             serverSocket = new ServerSocket(8189);
             clients = new Vector<ClientHandler>();
-            System.out.println("Сервер запущен");
+            logger.log(Level.INFO, "Сервер запущен");//System.out.println("Сервер запущен");
             while (true) {
                 Socket socket = serverSocket.accept();
-                System.out.println("Клиент подключился");
+                logger.log(Level.INFO, "Клиент подключился");//System.out.println("Клиент подключился");
                 new ClientHandler(this, socket);
             }
         } catch (Exception e) {
