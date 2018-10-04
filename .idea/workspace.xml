@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b04763ee-c5ef-4750-ba61-6ef6a7b69f37" name="Default" comment="Idea files changes">
+    <list default="true" id="b04763ee-c5ef-4750-ba61-6ef6a7b69f37" name="Default" comment="Logging added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatusers.db" beforeDir="false" afterPath="$PROJECT_DIR$/chatusers.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ru/geekbrains/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ru/geekbrains/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ru/geekbrains/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ru/geekbrains/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/ru/geekbrains/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/ru/geekbrains/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/ru/geekbrains/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/ru/geekbrains/Server.class" afterDir="false" />
     </list>
     <ignored path="java-messenger.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,14 +70,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="2639" />
-          <entry key="txt" value="18" />
+          <entry key="txt" value="31" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2639" />
-          <entry key="PLAIN_TEXT" value="18" />
+          <entry key="PLAIN_TEXT" value="31" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -132,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/geekbrains/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="97" column="141" selection-start-line="97" selection-start-column="141" selection-end-line="97" selection-end-column="141" />
+            <state relative-caret-position="136">
+              <caret line="8" column="26" selection-end-line="130" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,8 +179,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/geekbrains/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="43" column="50" lean-forward="true" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+            <state relative-caret-position="68">
+              <caret line="11" column="19" selection-end-line="108" />
               <folding>
                 <element signature="e#443#444#0" expanded="true" />
                 <element signature="e#477#478#0" expanded="true" />
@@ -194,7 +193,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/geekbrains/Network.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="860">
@@ -454,7 +453,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538683294932" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538687723019" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sqlite-jdbc-example" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -676,17 +675,24 @@
       <option name="project" value="LOCAL" />
       <updated>1537782019533</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Logging added">
+      <created>1538683365112</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1538683365112</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44591000" />
+    <option name="totallyTimeSpent" value="45927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="427" y="49" width="1425" height="978" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24835165" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24835165" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Palette&#9;" order="3" />
@@ -764,7 +770,8 @@
     </ignored-roots>
     <MESSAGE value="Idea files changes" />
     <MESSAGE value="ChatLog remake" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChatLog remake" />
+    <MESSAGE value="Logging added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logging added" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -923,10 +930,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/geekbrains/Network.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/geekbrains/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="43" column="50" lean-forward="true" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+        <state relative-caret-position="68">
+          <caret line="11" column="19" selection-end-line="108" />
           <folding>
             <element signature="e#443#444#0" expanded="true" />
             <element signature="e#477#478#0" expanded="true" />
@@ -940,18 +957,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/geekbrains/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="97" column="141" selection-start-line="97" selection-start-column="141" selection-end-line="97" selection-end-column="141" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/geekbrains/Network.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+        <state relative-caret-position="136">
+          <caret line="8" column="26" selection-end-line="130" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

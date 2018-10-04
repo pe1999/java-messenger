@@ -1,0 +1,5 @@
+nick2: dsds
+from nick2: ffff
+gta: Пользователь gta сменил ник на gtarrrrr.
+gtarrrrr: Пользователь gtarrrrr сменил ник на gta.
+Ник уже используется.
